@@ -40,7 +40,7 @@ public class Event extends AbstractEntity {
     }
 
     public String getLinkQrcode() {
-        return "http://api.qrserver.com/v1/create-qr-code/?data=http://localhost:8080/v1/event/" + this.getId();
+        return "http://api.qrserver.com/v1/create-qr-code/?data=http://192.168.1.67:8080/v2/admin/event/" + this.getId() + "/presence";
     }
 
     public String getNome() {

@@ -77,7 +77,7 @@ public class EventEndPoint {
     @GetMapping("/{id}/invitation")
     public ResponseEntity<?> getInvitationByEventId(@PathVariable("id") Long id) {
         if (eventDAO.existsById(id)) {
-            List<Invitation> invitationsList = eventDAO.findById(id).get().getInvitationList();
+            List<Invitation> invitationsList = invitationDAO.findByEventId(id);
             return new ResponseEntity<>(invitationsList, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

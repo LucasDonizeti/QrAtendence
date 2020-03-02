@@ -15,4 +15,6 @@ public interface InvitationRepository extends JpaRepository<Invitation, Long> {
 
     public boolean existsByEventIdAndGuestId(long eventId, long guestId);
 
+    public List<Invitation> findByEventId(long id);
+
 }
