@@ -77,8 +77,15 @@ public class ControllerAdmin {
         }else {
             return new ModelAndView("/erro");
         }
-
-
+    }
+    @GetMapping("/novo")
+    public ModelAndView novoAdmin(Admin admin){
+        return new ModelAndView("/novoAdmin");
+    }
+    @PostMapping("/novo")
+    public ModelAndView saveAdmin(Admin admin){
+        adminDAO.save(admin);
+        return getAllAdmin();
     }
 
 
